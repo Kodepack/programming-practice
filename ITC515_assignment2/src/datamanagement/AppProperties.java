@@ -5,6 +5,8 @@ public class AppProperties {
 private static AppProperties self = null;
 private Properties properties;
 
+// checking the push
+
 public static AppProperties getInstance() {
 if (self == null ) { self = new AppProperties(); } return self;}
 private AppProperties() {properties = new Properties();
