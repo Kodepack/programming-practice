@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 # programming-practice - branch prabath
 # Okay
 #Test two
-#Test three
+=======
+# programming-practice - branch kishantha
+# added comment form kishanthakodepack account
+# test commit
+# test commit
+>>>>>>> refs/remotes/origin/master
