@@ -1,13 +1,13 @@
 package datamanagement;
 
-public class cgCTL {
+public class CheckGradeController {
 
 	CheckGradeUI checkGradeUI;
 	String currentUnitCode = null;
 	Integer currentStudentID = null;
 	boolean changed = false;
 
-	public cgCTL() {
+	public CheckGradeController() {
 	}
 
 	public void execute() {
