@@ -8,3 +8,4 @@
 # test commit
 # test commit
 >>>>>>> refs/remotes/origin/master
+#test new commit from git desktop
