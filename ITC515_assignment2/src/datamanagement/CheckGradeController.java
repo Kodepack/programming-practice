@@ -1,10 +1,24 @@
 package datamanagement;
+/**
+ * 
+ * @author Kishantha
+ * 21-08-2016: Formated the code. added comments
+ *
+ *
+ */
 
+/**
+ * 
+ * CheckGradeController class
+ *
+ */
 public class CheckGradeController {
 
+	
 	CheckGradeUI checkGradeUI;
 	String currentUnitCode = null;
 	Integer currentStudentID = null;
+	//A variable to keep track of change mode or view mode
 	boolean changed = false;
 
 	public CheckGradeController() {
