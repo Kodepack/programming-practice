@@ -23,6 +23,7 @@ public class StudentUnitRecord implements IStudentUnitRecord {
 
 	public void setAsg1(float a1) {
 		if (a1 < 0 || a1 > UnitManager.UM().getUnit(unitCode).getAsg1Weight()) {
+			// Marks will be Kept within marking
 			throw new RuntimeException("Mark cannot be less than zero or greater than assessment weight");
 		}
 		this.assignment1 = a1;
