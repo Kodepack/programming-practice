@@ -1,30 +1,31 @@
 package datamanagement;
 
-import org.jdom.*;
 import java.util.List;
+import org.jdom.Element; // changed to explicit import for org.jdom
 
 
 public class StudentManager {
-	private static StudentManager self = null;
-
-	private StudentMap sm;
+	private static StudentManager studentManager = null; // variable forming class itself
+	
+	private StudentMap studentMap; // class StudentMap separate class File
 	private java.util.HashMap<String, StudentMap> um;
 
 	public static StudentManager get() {
-		if (self == null)
+		if (studentManager == null){
 
-			self = new StudentManager();
-		return self;
+			studentManager = new StudentManager();
+		}
+		return studentManager;
 	}
 
 	private StudentManager() {
 
-		sm = new StudentMap();
+		studentMap = new StudentMap();
 		um = new java.util.HashMap<>();
 	}
 
 	public IStudent getStudent(Integer id) {
-		IStudent is = sm.get(id);
+		IStudent is = studentMap.get(id);
 		return is != null ? is : createStudent(id);
 	}
 
@@ -44,7 +45,7 @@ public class StudentManager {
 			is = new Student(new Integer(el.getAttributeValue("sid")), el.getAttributeValue("fname"),
 					el.getAttributeValue("lname"), rlist);
 
-			sm.put(is.getID(), is);
+			studentMap.put(is.getID(), is);
 			return is;
 		}
 		throw new RuntimeException("DBMD: createStudent : student not in file");
