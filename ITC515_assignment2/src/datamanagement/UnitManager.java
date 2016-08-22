@@ -5,7 +5,7 @@ import org.jdom.*;
 
 public class UnitManager {
 
-	private static UnitManager uniManager = null; // variable forming class itself
+	private static UnitManager uniManager = null; // variable forming class itselfz
 	
 
 	private UnitMap unitMap;// class unitMap separate class File
