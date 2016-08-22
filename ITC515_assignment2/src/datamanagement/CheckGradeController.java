@@ -14,7 +14,7 @@ package datamanagement;
  */
 public class CheckGradeController {
 
-	
+	//checkGradeUI will hold an object for 
 	CheckGradeUI checkGradeUI;
 	String currentUnitCode = null;
 	Integer currentStudentID = null;
