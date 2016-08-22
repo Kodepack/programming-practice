@@ -5,30 +5,29 @@ import org.jdom.*;
 
 public class UnitManager {
 
-	private static UnitManager uniManager = null; // variable forming class itself
-	
+	private static UnitManager self = null;
 
-	private UnitMap unitMap;// class unitMap separate class File
+	private UnitMap UM;
 
-	public static UnitManager unitMap() {
-		if (UnitManager == null)
-			UnitManager = new UnitManager();
-		return UnitManager;
+	public static UnitManager UM() {
+		if (self == null)
+			self = new UnitManager();
+		return self;
 	}
 
 	private UnitManager() {
-		unitMap = new UnitMap();
+		UM = new UnitMap();
 	}
 
 	public IUnit getUnit(String uc) {
-		IUnit iu = unitMap.get(uc);
+		IUnit iu = UM.get(uc);
 		return iu != null ? iu : createUnit(uc);
 
 	}
 
 	private IUnit createUnit(String unitCode) {
 
-		IUnit iUnit;
+		IUnit iu;
 
 		for (Element el : (List<Element>) XMLManager.getXML().getDocument()
 				.getRootElement().getChild("unitTable").getChildren("unit"))
@@ -36,7 +35,7 @@ public class UnitManager {
 				StudentUnitRecordList slist;
 
 				slist = null;
-				iUnit = new Unit(el.getAttributeValue("uid"),
+				iu = new Unit(el.getAttributeValue("uid"),
 						el.getAttributeValue("name"), Float.valueOf(
 								el.getAttributeValue("ps")).floatValue(), Float
 								.valueOf(el.getAttributeValue("cr"))
@@ -51,8 +50,8 @@ public class UnitManager {
 						Integer.valueOf(el.getAttributeValue("examwgt"))
 								.intValue(), StudentUnitRecordManager
 								.instance().getRecordsByUnit(unitCode));
-				unitMap.put(iUnit.getUnitCode(), iUnit);
-				return iUnit;
+				UM.put(iu.getUnitCode(), iu);
+				return iu;
 			}
 
 		throw new RuntimeException("DBMD: createUnit : unit not in file");
@@ -60,17 +59,17 @@ public class UnitManager {
 
 	public UnitMap getUnits() {
 
-		UnitMap unitMap;
-		IUnit iUnit;
+		UnitMap uM;
+		IUnit iu;
 
-		unitMap = new UnitMap();
+		uM = new UnitMap();
 		for (Element el : (List<Element>) XMLManager.getXML().getDocument()
 				.getRootElement().getChild("unitTable").getChildren("unit")) {
-			iUnit = new UnitProxy(el.getAttributeValue("uid"),
+			iu = new UnitProxy(el.getAttributeValue("uid"),
 					el.getAttributeValue("name"));
-			unitMap.put(iUnit.getUnitCode(), iUnit);
+			uM.put(iu.getUnitCode(), iu);
 		} // unit maps are filled with PROXY units
-		return unitMap;
+		return uM;
 	}
 
 }
