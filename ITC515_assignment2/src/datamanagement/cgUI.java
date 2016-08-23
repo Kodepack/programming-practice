@@ -19,6 +19,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	Integer sid;
 
 	public cgUI(cgCTL ctl) {
+		
 		this.ctl = ctl;
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
@@ -36,7 +37,8 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	// <editor-fold defaultstate="collapsed"
 	// desc="Generated Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
-
+// create compornets
+		
 		jLabel1 = new javax.swing.JLabel();
 		jPanel1 = new javax.swing.JPanel();
 		jComboBox1 = new javax.swing.JComboBox();
