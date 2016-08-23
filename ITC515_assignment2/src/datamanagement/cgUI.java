@@ -4,11 +4,12 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class cgUI extends javax.swing.JFrame implements IUnitLister,
+public class cgUI extends  Frame implements IUnitLister,
 		IStudentLister {
 	private cgCTL ctl;
 	private javax.swing.DefaultComboBoxModel uM;
@@ -19,7 +20,6 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	Integer sid;
 
 	public cgUI(cgCTL ctl) {
-		
 		this.ctl = ctl;
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
@@ -37,8 +37,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	// <editor-fold defaultstate="collapsed"
 	// desc="Generated Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
-// create compornets
-		
+
 		jLabel1 = new javax.swing.JLabel();
 		jPanel1 = new javax.swing.JPanel();
 		jComboBox1 = new javax.swing.JComboBox();
