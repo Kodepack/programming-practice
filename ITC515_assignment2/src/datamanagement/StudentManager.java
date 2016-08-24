@@ -48,7 +48,7 @@ public class StudentManager {
 			is = new Student(new Integer(element.getAttributeValue("sid")), element.getAttributeValue("fname"),
 					element.getAttributeValue("lname"), rlist);
 
-			studentMap_.put(is.getID(), is);
+			studentMap_.put(is.getId(), is);
 			return is;
 		}
 		throw new RuntimeException("DBMD: createStudent : student not in file");
@@ -75,9 +75,10 @@ public class StudentManager {
 		for (IStudentUnitRecord S : ur) {
 
 			iStudent = createStudentProxy(new Integer(S.getStudentID()));
-			studentMap.put(iStudent.getID(), iStudent);
+			studentMap.put(iStudent.getId(), iStudent);
 		}
 		unitMap_.put(uc, studentMap);
 		return studentMap;
 	}
 }
+
