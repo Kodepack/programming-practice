@@ -8,14 +8,14 @@ import org.jdom.output.XMLOutputter;
 import java.io.IOException;
 import org.jdom.JDOMException;
 
-public class XMLManager {
-private static XMLManager self = null;
+public class XmlManager {//XMLManager changed to XmlManager
+private static XmlManager self = null;
 
 
         private Document doc;
-        public static XMLManager getXML() { if (self == null ) self = new XMLManager(); return self;
+        public static XmlManager getXml() { if (self == null ) self = new XmlManager(); return self;
 }
-    private XMLManager() {init();
+    private XmlManager() {init();
 
     
     
@@ -35,14 +35,14 @@ try {
 
 
                 catch (JDOMException e) {
-System.err.printf( "%s", "DBMD: XMLManager : init : caught JDOMException\n" );
-throw new RuntimeException("DBMD: XMLManager : init : JDOMException");} 
+System.err.printf( "%s", "DBMD: XmlManager : init : caught JDOMException\n" );
+throw new RuntimeException("DBMD: XmlManager : init : JDOMException");} 
         catch (IOException e) {
-            System.err.printf( "%s", "DBMD: XMLManager : init : caught IOException\n" );
+            System.err.printf( "%s", "DBMD: XmlManager : init : caught IOException\n" );
             
             
             
-throw new RuntimeException("DBMD: XMLManager : init : IOException");
+throw new RuntimeException("DBMD: XmlManager : init : IOException");
         }  
                 }      
     public Document getDocument() {
@@ -52,11 +52,11 @@ throw new RuntimeException("DBMD: XMLManager : init : IOException");
     public void saveDocument() {
         String xmlfile = AppProperties.getInstance().getProperties().getProperty("XMLFILE");
                 try (FileWriter fout = new FileWriter(xmlfile)) {
-XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+XmlOutputter outputter = new XmlOutputter(Format.getPrettyFormat());
     outputter.output(doc, fout);
                     fout.close();
 }
         catch (IOException ioe) {
 System.err.printf( "%s\n", "DBMD : XMLManager : saveDocument : Error saving XML to " + xmlfile);
-                    throw new RuntimeException("DBMD: XMLManager : saveDocument : error writing to file");
+                    throw new RuntimeException("DBMD: XmlManager : saveDocument : error writing to file");
         }}}
