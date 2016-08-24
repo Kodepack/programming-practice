@@ -11,9 +11,9 @@ public class UnitManager {
 	private UnitMap unitMap;// class unitMap separate class File
 
 	public static UnitManager unitMap() {
-		if (UnitManager == null)
-			UnitManager = new UnitManager();
-		return UnitManager;
+		if (uniManager == null)
+			uniManager = new UnitManager();
+		return uniManager;
 	}
 
 	private UnitManager() {
