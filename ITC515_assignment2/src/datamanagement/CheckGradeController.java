@@ -80,7 +80,7 @@ public class CheckGradeController {
 	}
 
 	public String checkGrade(float assignmentMarks, float practicleMarks, float examMarks) {
-		IUnit unit = UnitManager.UM().getUnit(currentUnitCode);
+		IUnit unit = UnitManager.unitMap().getUnit(currentUnitCode);
 		String grade = unit.getGrade(assignmentMarks, practicleMarks, examMarks);
 		checkGradeUI.setState4(true);
 		checkGradeUI.setState5(false);
@@ -99,7 +99,7 @@ public class CheckGradeController {
 
 	public void saveGrade(float assignmentMarks, float practicleMarks, float examMarks) {
 
-		IUnit u = UnitManager.UM().getUnit(currentUnitCode);
+		IUnit u = UnitManager.unitMap().getUnit(currentUnitCode);
 		IStudent s = StudentManager.get().getStudent(currentStudentID);
 
 		IStudentUnitRecord studentUnitRecord = s.getUnitRecord(currentUnitCode);
