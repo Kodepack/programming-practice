@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # programming-practice - branch OK
 # Update StudentMap.java class
 =======
@@ -17,3 +18,9 @@
 #Edit the UnitManager class, author - Prabath
 #Edit the UnitManager class, author - Prabath 2nd time
 >>>>>>> refs/remotes/origin/master
+=======
+# programming-practice - branch Andru confirmed
+# Via User changes
+#3.1454
+#3.166666
+>>>>>>> refs/remotes/origin/Andru

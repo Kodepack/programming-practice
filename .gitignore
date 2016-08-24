@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 #git ignored file list
 bin/
 .metadata/
+=======
+#git ignored file list
+
+
+>>>>>>> refs/remotes/origin/Andru
