@@ -9,7 +9,7 @@ public class Unit implements IUnit {
 	private float column4_;
 	private float column5_;
 	private int assignment1_, assignment2_, exam_;
-	
+
 	private StudentUnitRecordList studentUnitRecordList;
 
 	public Unit(String unitCode, String unitName, float column1, float column2, float column3, float column4,
@@ -23,7 +23,8 @@ public class Unit implements IUnit {
 		this.column3_ = column4;
 		this.column5_ = column5;
 		this.setAssessmentWeights(assignment1, assignment2, exam);
-		this.studentUnitRecordList = studentUnitRecordList == null ? new StudentUnitRecordList() : studentUnitRecordList;
+		this.studentUnitRecordList = studentUnitRecordList == null ? new StudentUnitRecordList()
+				: studentUnitRecordList;
 	}
 
 	public String getUnitCode() {
@@ -113,25 +114,20 @@ public class Unit implements IUnit {
 
 	@Override
 	public void setAssessmentWeights(int assignment1, int assignment2, int exam) {
-		if (assignment1 < 0 || assignment1 > 100 ||
-			assignment2 < 0 || assignment2 > 100 ||
-			exam < 0 || exam > 100 ) {
+		if (assignment1 < 0 || assignment1 > 100 || assignment2 < 0 || assignment2 > 100 || exam < 0 || exam > 100) {
 			throw new RuntimeException("Assessment weights cant be less than zero or greater than 100");
-		}			
+		}
 		if (assignment1 + assignment2 + exam != 100) {
 			throw new RuntimeException("Assessment weights must add to 100");
 		}
 		this.assignment1_ = assignment1;
 		this.assignment2_ = assignment2;
-		this.exam_ = exam;			
+		this.exam_ = exam;
 	}
-	
-	private void setCutoffs( float ps, float cr, float di, float hd, float ae) {
-		if (ps < 0 || ps > 100 ||
-			cr < 0 || cr > 100 ||
-			di < 0 || di > 100 ||
-			hd < 0 || hd > 100 ||
-			ae < 0 || ae > 100 ) {
+
+	private void setCutoffs(float ps, float cr, float di, float hd, float ae) {
+		if (ps < 0 || ps > 100 || cr < 0 || cr > 100 || di < 0 || di > 100 || hd < 0 || hd > 100 || ae < 0
+				|| ae > 100) {
 			throw new RuntimeException("Assessment cutoffs cant be less than zero or greater than 100");
 		}
 		if (ae >= ps) {
@@ -148,13 +144,11 @@ public class Unit implements IUnit {
 		}
 
 	}
-	
+
 	public String getGrade(float f1, float f2, float f3) {
 		float t = f1 + f2 + f3;
-		
-		if (f1 < 0 || f1 > this.assignment1_ ||
-			f2 < 0 || f2 > this.assignment2_ ||
-			f3 < 0 || f3 > this.exam_ ) {
+
+		if (f1 < 0 || f1 > this.assignment1_ || f2 < 0 || f2 > this.assignment2_ || f3 < 0 || f3 > this.exam_) {
 			throw new RuntimeException("marks cannot be less than zero or greater than assessment weights");
 		}
 
@@ -172,5 +166,4 @@ public class Unit implements IUnit {
 			return "HD";
 	}
 
-	
 }
