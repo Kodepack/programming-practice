@@ -35,7 +35,7 @@ public class CheckGradeController {
 		checkGradeUI.setState6(false);
 		checkGradeUI.Refresh3();
 
-		ListUnitsCTL listUnitsCTL = new ListUnitsCTL();
+		ListUnitsController listUnitsCTL = new ListUnitsController();
 		listUnitsCTL.listUnits(checkGradeUI);
 		checkGradeUI.setVisible(true);
 		checkGradeUI.setState1(true);
