@@ -5,23 +5,23 @@ import org.jdom.Element; // changed explicitly
 
 public class UnitManager {
 
-private static UnitManager uniManager = null; // variable forming class itself
+private static UnitManager uniManager_ = null; // variable forming class itself
 	
 
-	private UnitMap unitMap;// class unitMap separate class File
+	private UnitMap unitMap_;// class unitMap separate class File
 
 	public static UnitManager unitMap() {
-		if (uniManager == null)
-			uniManager = new UnitManager();
-		return uniManager;
+		if (uniManager_ == null)
+			uniManager_ = new UnitManager();
+		return uniManager_;
 	}
 
 	private UnitManager() {
-		unitMap = new UnitMap();
+		unitMap_ = new UnitMap();
 	}
 
 	public IUnit getUnit(String uc) {
-		IUnit iu = unitMap.get(uc);
+		IUnit iu = unitMap_.get(uc);
 		return iu != null ? iu : createUnit(uc);
 
 	}
@@ -52,7 +52,7 @@ private static UnitManager uniManager = null; // variable forming class itself
 						Integer.valueOf(el.getAttributeValue("examwgt"))
 								.intValue(), StudentUnitRecordManager
 								.instance().getRecordsByUnit(unitCode));
-				unitMap.put(iUnit.getUnitCode(), iUnit);
+				unitMap_.put(iUnit.getUnitCode(), iUnit);
 				return iUnit;
 			}
 
