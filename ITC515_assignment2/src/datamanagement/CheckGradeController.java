@@ -103,9 +103,9 @@ public class CheckGradeController {
 		IStudent s = StudentManager.get().getStudent(currentStudentID);
 
 		IStudentUnitRecord studentUnitRecord = s.getUnitRecord(currentUnitCode);
-		studentUnitRecord.setAsg1(assignmentMarks);
-		studentUnitRecord.setAsg2(practicleMarks);
-		studentUnitRecord.setExam(examMarks);
+		studentUnitRecord.setAssignment1Marks(assignmentMarks);
+		studentUnitRecord.setAssignment2Marks(practicleMarks);
+		studentUnitRecord.setExamMarks(examMarks);
 		StudentUnitRecordManager.instance().saveRecord(studentUnitRecord);
 		checkGradeUI.setState4(true);
 		checkGradeUI.setState5(false);
