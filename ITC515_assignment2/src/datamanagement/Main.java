@@ -2,5 +2,9 @@
 package datamanagement;
 
 public class Main {
-    public static void main(String[] p) {new CheckGradeController().execute();}    }
-
+	public static void main(String[] p) {
+		
+		new CheckGradeController().execute();
+		
+	}
+}
