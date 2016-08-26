@@ -46,7 +46,7 @@ public class CheckGradeController {
 		if (code.equals("NONE"))
 			checkGradeUI.setState2(false);
 		else {
-			ListStudentsCTL lsCTL = new ListStudentsCTL();
+			ListStudentsController lsCTL = new ListStudentsController();
 			lsCTL.listStudents(checkGradeUI, code);
 			currentUnitCode = code;
 			checkGradeUI.setState2(true);
