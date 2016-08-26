@@ -1,7 +1,8 @@
+
 package datamanagement;
 
 import java.util.List;
-import org.jdom.*;
+import org.jdom.Element;
 
 /**
  * @author andre
@@ -40,7 +41,7 @@ public class StudentUnitRecordManager {
 						new Float(el.getAttributeValue("asg1")).floatValue(),
 						new Float(el.getAttributeValue("asg2")).floatValue(),
 						new Float(el.getAttributeValue("exam")).floatValue());
-				recordMap_.put(iRecord.getStudentID().toString() + iRecord.getUnitCode(), iRecord);
+				recordMap_.put(iRecord.getStudentId().toString() + iRecord.getUnitCode(), iRecord);
 				return iRecord;
 			}
 		}
@@ -81,12 +82,12 @@ public class StudentUnitRecordManager {
 	public void saveRecord(IStudentUnitRecord irec) {
 		for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement()
 				.getChild("studentUnitRecordTable").getChildren("record")) {
-			if (irec.getStudentID().toString().equals(el.getAttributeValue("sid"))
+			if (irec.getStudentId().toString().equals(el.getAttributeValue("sid"))
 					&& irec.getUnitCode().equals(el.getAttributeValue("uid"))) {
-				el.setAttribute("asg1", new Float(irec.getAsg1()).toString());
+				el.setAttribute("asg1", new Float(irec.getAssignment1Marks()).toString());
 
-				el.setAttribute("asg2", new Float(irec.getAsg2()).toString());
-				el.setAttribute("exam", new Float(irec.getExam()).toString());
+				el.setAttribute("asg2", new Float(irec.getAssignment2Marks()).toString());
+				el.setAttribute("exam", new Float(irec.getAssignment2Marks()).toString());
 				XMLManager.getXML().saveDocument(); // write out the XML file
 													// for continuous save
 				return;
