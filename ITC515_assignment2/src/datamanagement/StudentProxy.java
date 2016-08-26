@@ -1,9 +1,9 @@
 package datamanagement;
 
 public class StudentProxy implements IStudent {
+	
 	private Integer studentId_;
 	private String lastName_;
-
 	private String firstName_;
 	private StudentManager studentManager_;
 
@@ -48,6 +48,7 @@ public class StudentProxy implements IStudent {
 	}
 
 	public StudentUnitRecordList getUnitRecords() {
+		
 		return studentManager_.getStudent(studentId_).getUnitRecords();
 	}
 }
