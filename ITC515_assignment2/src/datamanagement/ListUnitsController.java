@@ -7,16 +7,16 @@ package datamanagement;
  */
 public class ListUnitsController {
 	//This variable will hold a UnitManager instance;
-	private UnitManager unitManager;
+	private UnitManager unitManager_;
 
 	
 	public ListUnitsController() {
-		unitManager = UnitManager.unitMap();
+		unitManager_ = UnitManager.unitMap();
 	}
 
 	public void listUnits(IUnitLister lister) {
 		lister.clearUnits();
-		UnitMap units = unitManager.getUnits();
+		UnitMap units = unitManager_.getUnits();
 		for (String s : units.keySet())
 			lister.addUnit(units.get(s));
 	}

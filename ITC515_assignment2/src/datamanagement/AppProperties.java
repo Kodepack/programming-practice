@@ -7,24 +7,27 @@ import java.io.IOException;
 public class AppProperties {
 
 	//self will hold a singleton object of AppProperties Class
-	private static AppProperties self = null;
-	private Properties properties;
+	private static AppProperties self_ = null;
+	private Properties properties_;
 
 	/**
 	 * This method will return a singleton object of AppProperties variable
 	 * @return AppProperties instance
 	 */
 	public static AppProperties getInstance() {
-		if (self == null) {
-			self = new AppProperties();
+		if (self_ == null) {
+			self_ = new AppProperties();
 		}
-		return self;
+		return self_;
 	}
 
+	/**
+	 * Private constructor of the singleton class
+	 */
 	private AppProperties() {
-		properties = new Properties();
+		properties_ = new Properties();
 		try {
-			properties.load(new FileInputStream("Properties.prop"));
+			properties_.load(new FileInputStream("Properties.prop"));
 		} catch (IOException ioException) {
 			//Convert the checked exception to a runtime exception
 			throw new RuntimeException("Could not read property file");
@@ -36,7 +39,7 @@ public class AppProperties {
 	 * @return
 	 */
 	public Properties getProperties() {
-		return properties;
+		return properties_;
 	}
 }
 
