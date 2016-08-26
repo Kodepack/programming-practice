@@ -1,11 +1,11 @@
 package datamanagement;
 
 import java.util.List;
-import org.jdom.*;
+import org.jdom.Element; // changed explicitly 
 
 public class UnitManager {
 
-	private static UnitManager uniManager = null; // variable forming class itself
+private static UnitManager uniManager = null; // variable forming class itself
 	
 
 	private UnitMap unitMap;// class unitMap separate class File
@@ -30,12 +30,13 @@ public class UnitManager {
 
 		IUnit iUnit;
 
-		for (Element el : (List<Element>) XMLManager.getXML().getDocument()
-				.getRootElement().getChild("unitTable").getChildren("unit"))
+		for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("unitTable")
+				.getChildren("unit"))
 			if (unitCode.equals(el.getAttributeValue("uid"))) {
 				StudentUnitRecordList slist;
 
 				slist = null;
+
 				iUnit = new Unit(el.getAttributeValue("uid"),
 						el.getAttributeValue("name"), Float.valueOf(
 								el.getAttributeValue("ps")).floatValue(), Float
