@@ -1,7 +1,14 @@
 package datamanagement;
+/**
+ * 
+ * @author Anushka
+ *
+ */
 
 public interface IStudent {
 
+	//abstracts methods
+	
     public Integer getId();
 
     public String getFirstName();
