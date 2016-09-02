@@ -24,3 +24,7 @@
 #3.1454
 #3.166666
 >>>>>>> refs/remotes/origin/Andru
+
+
+
+edit exaple
