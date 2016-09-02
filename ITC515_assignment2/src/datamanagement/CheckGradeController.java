@@ -35,7 +35,7 @@ public class CheckGradeController {
 		checkGradeUI.setState6(false);
 		checkGradeUI.Refresh3();
 
-		ListUnitsCTL listUnitsCTL = new ListUnitsCTL();
+		ListUnitsController listUnitsCTL = new ListUnitsController();
 		listUnitsCTL.listUnits(checkGradeUI);
 		checkGradeUI.setVisible(true);
 		checkGradeUI.setState1(true);
@@ -46,7 +46,7 @@ public class CheckGradeController {
 		if (code.equals("NONE"))
 			checkGradeUI.setState2(false);
 		else {
-			ListStudentsCTL lsCTL = new ListStudentsCTL();
+			ListStudentsController lsCTL = new ListStudentsController();
 			lsCTL.listStudents(checkGradeUI, code);
 			currentUnitCode = code;
 			checkGradeUI.setState2(true);
@@ -103,9 +103,9 @@ public class CheckGradeController {
 		IStudent s = StudentManager.get().getStudent(currentStudentID);
 
 		IStudentUnitRecord studentUnitRecord = s.getUnitRecord(currentUnitCode);
-		studentUnitRecord.setAsg1(assignmentMarks);
-		studentUnitRecord.setAsg2(practicleMarks);
-		studentUnitRecord.setExam(examMarks);
+		studentUnitRecord.setAssignment1Marks(assignmentMarks);
+		studentUnitRecord.setAssignment2Marks(practicleMarks);
+		studentUnitRecord.setExamMarks(examMarks);
 		StudentUnitRecordManager.instance().saveRecord(studentUnitRecord);
 		checkGradeUI.setState4(true);
 		checkGradeUI.setState5(false);

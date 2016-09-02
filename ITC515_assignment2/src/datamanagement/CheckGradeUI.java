@@ -398,9 +398,9 @@ public class CheckGradeUI extends  JFrame implements IUnitLister,IStudentLister 
 	}
 
 	public void setRecord(IStudentUnitRecord record) {
-		jTextField1.setText(new Float(record.getAsg1()).toString());
-		jTextField2.setText(new Float(record.getAsg2()).toString());
-		jTextField3.setText(new Float(record.getExam()).toString());
+		jTextField1.setText(new Float(record.getAssignment1Marks()).toString());
+		jTextField2.setText(new Float(record.getAssignment2Marks()).toString());
+		jTextField3.setText(new Float(record.getExamMarks()).toString());
 		jLabel5.setText("");
 	}
 
