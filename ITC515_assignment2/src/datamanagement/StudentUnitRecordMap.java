@@ -1,4 +1,14 @@
 package datamanagement;
-public class StudentUnitRecordMap extends java.util.HashMap<String, IStudentUnitRecord>{
+
+import java.util.HashMap;
+
+/**
+ * 
+ * @author Anushka
+ *
+ */
+
+
+public class StudentUnitRecordMap extends HashMap<String, IStudentUnitRecord>{
 
 }
