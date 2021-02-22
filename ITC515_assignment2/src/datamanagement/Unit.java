@@ -87,7 +87,7 @@ public class Unit implements IUnit {
 
 	public IStudentUnitRecord getStudentRecord(int studentID) {
 		for (IStudentUnitRecord r : this.studentUnitRecordList) {
-			if (r.getStudentId() == studentID)
+			if (r.getStudentID() == studentID)
 				return r;
 		}
 		return null;
@@ -165,6 +165,5 @@ public class Unit implements IUnit {
 		else
 			return "HD";
 	}
-
 
 }

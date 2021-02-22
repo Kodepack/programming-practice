@@ -2,59 +2,17 @@ package datamanagement;
 
 public interface IStudentUnitRecord {
 
-	/**
-	 * studentId getter
-	 * @return studentId
-	 */
-    public Integer getStudentId();
-    
-    /**
-     * unitCode getter
-     * @return unitCode
-     */
+    public Integer getStudentID();
     public String getUnitCode();
 
-    /**
-     * assignment1Marks setter
-     * @param marks
-     */
-    public void setAssignment1Marks(float marks);
-    
-    /**
-     * Assignment 1 marks getter
-     * @return assignment1marks
-     */
-    public float getAssignment1Marks();
+    public void setAsg1(float mark);
+    public float getAsg1();
 
-    /**
-     * Assignment  2marks setter
-     * @param marks
-     */
-    public void setAssignment2Marks(float marks);
-    
-    
-    /**
-     * Assignment 2 marks getter
-     * @return marks
-     */
-    public float getAssignment2Marks();
+    public void setAsg2(float mark);
+    public float getAsg2();
 
-    
-    /**
-     * Exam marks setter
-     * @param marks
-     */
-    public void setExamMarks(float marks);
-    
-    /**
-     * Exam marks getter
-     * @return marks
-     */
-    public float getExamMarks();
+    public void setExam(float mark);
+    public float getExam();
 
-    /**
-     * Total marks getter
-     * @return marks
-     */
-    public float getTotalMarks();
+    public float getTotal();
 }
